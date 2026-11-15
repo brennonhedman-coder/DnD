@@ -1,6 +1,6 @@
 # DnD Building Floor Plans v2.0.3
 
-Print and play floor plans for tabletop RPGs One-shot: click a button, get a map, print it, bring it to game night.
+Print and play floor plans for tabletop RPGs, maybe a One-shot: click a button, get a map, print it, bring it to game night.
 
 Version 2.0 is designed around a "print and play" concept. Every map prints on 8.5 x 11 paper with a normal printer and can be used as is, so you have instant usable floor plans for your game. The buttons are designed to be satisfying to click: they generate maps as fast as you can click. If you like it, save it, print it.
 
