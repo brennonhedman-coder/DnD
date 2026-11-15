@@ -2,8 +2,7 @@
 Dungeons &amp; Dragons stuff to make life easier
 
 # About
-One tool so far has been made to make life easier.
-It generates maps programmatically.
+One tool so far has been made to make life easier; it generates maps programmatically.
 
 The idea that sparked this repo is DnD-BuildingFloorPlans.py -- Basically, I wanted to build a tool to generate floor plans for ttrpgs and do it in the form of an app you can click on like a rat clicking for food pellets, and it makes map after map, as fast as you can click (maybe not literally but it is supposed to be fast and satisfying to click and use).
 
