@@ -1,6 +1,6 @@
 # DnD Building Floor Plans v2.0.3
 
-Print and play floor plans for tabletop RPGs like D&D: click a button, get a map, print it, bring it to game night.
+Print and play floor plans for tabletop RPGs One-shot: click a button, get a map, print it, bring it to game night.
 
 Version 2.0 is designed around a "print and play" concept. Every map prints on 8.5 x 11 paper with a normal printer and can be used as is, so you have instant usable floor plans for your game. The buttons are designed to be satisfying to click: they generate maps as fast as you can click. If you like it, save it, print it.
 
@@ -163,10 +163,10 @@ The script is a single file and stands on its own. It needs only Python, Tkinter
 
 ## Common Use Cases
 
-### Game Master: The party walks into a building you did not plan
+### Game Master: I need to make a One-shot, fast!
 
 1. Open the window and click "Single building" until one fits the scene.
-2. Click "Yes" and name it.
+2. Click "Yes" and name it. Go back to step one, if needed.
 3. Print the `_grid` picture and put it on the table.
 
 ### Game Master: Preparing a hideout for next session
@@ -177,15 +177,15 @@ The script is a single file and stands on its own. It needs only Python, Tkinter
 
 ### Game Master: A dungeon crawl over several sessions
 
-1. Click "Dungeon" and save one you like.
-2. Print the levels as the party reaches them.
-3. Copy the seed into your notes. If the pages are lost, the seed brings the same dungeon back.
+1. Plan six weekends of dungeon crawling.
+2. Click "Dungeon" and save six that you like. Print a set.
+3. Play your session and end by finding a tunnel leading to the next set of maps.
 
 ### Online Game Master: Running the same map on a virtual tabletop
 
 1. Save the map as usual.
 2. Import the `_walls` or `_grid` JPG for each level.
-3. Set the platform's grid to 70 pixels per square.
+3. Set the platform's grid to the desired pixels per square as needed.
 
 ## Troubleshooting
 
