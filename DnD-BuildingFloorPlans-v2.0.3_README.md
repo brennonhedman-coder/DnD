@@ -10,7 +10,7 @@ Version 2.0 is designed around a "print and play" concept. Every map prints on 8
 - Pillow 10.1 or newer (`python3 -m pip install pillow`)
 - Tkinter, which comes with the standard Python installer
 - macOS, Windows or Linux
-- A normal printer and 8.5 x 11 paper, if you want the maps on the table
+- Not actually a requirement, technically -- A common, home use printer and 8.5 x 11 paper, if you want to test the intent
 
 ## Quick Start
 
