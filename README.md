@@ -1,49 +1,155 @@
 # DnD
-Dungeons & Dragons stuff to make life easier
 
-# About
-One tool so far has been made to make life easier: it generates maps programmatically.
+Dungeons & Dragons stuff to make life easier.
 
-The idea that sparked this repo is DnD-MapBuilder-Interior. Basically, I wanted to build a tool that generates floor plans for TTRPGs, in the form of an app you can click on like a rat clicking for food pellets, and it makes map after map as fast as you can click (maybe not literally, but it is supposed to be fast and satisfying to click and use).
+This repo holds print and play tools for tabletop RPGs like D&D. Each tool is a single Python file that opens a window: click a button, get a map, print it, bring it to game night. Every map fits one 8.5 x 11 sheet of paper, with a 70 pixel grid, and every map is saved as a JPG.
 
-The tool has gone through a few names. Hideout generator was the first iteration, it became DnD-BuildingFloorPlans for version 2.0, and the latest name is DnD-MapBuilder-Interior (starting again at v1.0). I can read a Python script but I only speak English and PowerShell. AI is generating, editing and/or reviewing the code. Each script is published with a README .md file next to it; if you don't see one for a script, it is on the way.
+The tools so far make two kinds of map:
 
-The goal of DnD-MapBuilder-Interior is "print and play": every map can be printed at home on 8.5 x 11 paper and you can actually play with what comes out of your printer. Every floor and every dungeon room fits on one sheet, with a 70 pixel grid. These files have not been tested with any online platforms. You get .jpg files when you hit save.
+- Area maps: outdoor land with forests, sand and rock, and water, plus numbered adventure locations marked with a red x.
+- Floor plans: buildings, hideouts, villages, towns and dungeon complexes.
 
-# Two versions
-This repo has two versions of DnD-MapBuilder-Interior, and they are very different. Both run on their own; pick the one you like.
+The newest tool, DnD MapBuilder v1.1, joins the two in one window. Pick a floor plan for each adventure location, or let the script pick them all.
 
-- v2.0 is the newest. It was rewritten from scratch to be short and simple, and its dungeons are laid out on an even grid that is easy to read and easy to lay out at the table.
-- v1.0 is the bigger, more detailed version. Its floors have hallways and more kinds of stairs, and its dungeons grow into tight clusters with winding corridors.
+## Which script do I use?
 
-The same seed makes a different map in each version.
-
-| | v1.0 | v2.0 |
+| Script | What it makes | Status |
 |---|---|---|
-| Buttons | "Single building", "Bandit hideout", "Small dungeon", "Dungeon complex" | "Building", "Hideout", "Dungeon" |
-| Script size | about 3,400 lines | about 730 lines |
-| Floors | Rooms and hallways; the stairwell often opens straight onto a hallway | Rooms only, joined by doorways |
-| Building | One floor taken from a bandit hideout, stairs removed | One floor built on its own |
-| Hideout | Bandit hideout of 3 or 4 levels, or a small dungeon of 4 to 6 levels all below ground. A main stairwell links levels 1, 2 and -2; deeper levels use secondary stairwells | One button for both: 3 to 6 levels, up to 3 above ground. One stairwell runs through every level |
-| Dungeon rooms | 15 to 99 rooms packed tightly into clusters | 15 to 99 rooms on an even grid, numbered left to right, top to bottom |
-| Dungeon corridors | Winding, found round the rooms; they branch and meet each other | Short and simple; each joins exactly two rooms and none cross |
-| Doors per dungeon room | At most 2 | Up to 4, one per wall |
-| Dungeon ways out | An exit 6 times in 7, otherwise a shortcut back towards the entrance | Always an entrance on the west and an exit on the east |
-| Dungeon room key | Detailed: reached from, leads on to, loops round to, every doorway | Simple: every doorway, its corridor length and where it leads |
-| Dungeon overview | 2 pictures: grid on the rock, grid on the floors | 1 picture: white, grid inside rooms and corridors only |
-| Command line | A seed and kind, `--save` without the window, `--test` to check many maps | A seed and kind only |
-| Save buttons | Standard buttons (dark grey in Dark Mode) | White, in Light or Dark Mode |
+| `DnD-MapBuilder_v1.1.py` | Area map, adventure locations and a floor plan for each location, in one window | Newest |
+| `GitHib/DnD-MapBuilder-Interior_v2.1.1.py` | Floor plans: Building, Village, Hideout, Town, Dungeon complex | Current floor plan tool |
+| `DnD-MapBuilder-Exterior_v2.0.py` | Area maps with adventure locations | Current area map tool |
+| `GitHib/DnD-MapBuilder-Interior_v2.1.py` | Floor plans, before the 2.1.1 changes | Earlier |
+| `GitHib/DnD-MapBuilder-Interior_v2.0.py` | Floor plans: Building, Hideout, Dungeon | Earlier |
+| `GitHib/DnD-MapBuilder-Interior_v1.0.py` | Floor plans: bigger and more detailed, with hallways and more kinds of stairs | Earlier |
+| `DnD-MapBuilder-Exterior_v1.0.py` | Area maps | Earlier |
 
-# Files
-- DnD-MapBuilder-Interior_v2.0.py: the newest version of the tool
-- DnD-MapBuilder-Interior_v2.0_README.md: how to install, run and print with v2.0
-- DnD-MapBuilder-Interior_v1.0.py: the bigger, more detailed version
-- DnD-MapBuilder-Interior_v1.0_README.md: how to install, run and print with v1.0
+Each script has a README next to it with the full walkthrough. The newest version of each tool is the one to start with.
 
-Both need Python 3.8 or newer and Pillow (`python3 -m pip install pillow`). To start one:
+## Requirements
+
+- Python 3.8 or newer
+- Pillow 10.1 or newer: `python3 -m pip install pillow`
+- Tkinter, which comes with the standard Python installer
+- macOS, Windows or Linux
+- A printer and 8.5 x 11 paper, to play at the table
+
+## Quick Start
+
+Install Pillow once:
 
 ```bash
-python3 DnD-MapBuilder-Interior_v2.0.py
+python3 -m pip install pillow
 ```
 
-I hope you enjoy.
+Start the newest tool:
+
+```bash
+python3 DnD-MapBuilder_v1.1.py
+```
+
+1. Click "Area map" until you like the land.
+2. Click "Adventure locations" to add numbered locations.
+3. Answer "Would you like to generate floor plans for the locations on your adventure?" with "Yes", "No" or "Make automatically".
+4. At "Save?", click "Yes", type a name and press "OK". Everything is saved in its own folder inside `Maps`, next to the script.
+5. Print the `_grid` JPG (blue grid) or the plain JPGs on 8.5 x 11 paper with "Fit to page" (or "Scale to fit") on.
+
+To make only a floor plan, start the floor plan tool instead:
+
+```bash
+python3 GitHib/DnD-MapBuilder-Interior_v2.1.1.py
+```
+
+Click "Building", "Village", "Hideout", "Town" or "Dungeon complex", then "Yes" and a name to save.
+
+## The tools
+
+### DnD MapBuilder v1.1
+
+The area map comes from DnD MapBuilder Exterior v2.0 and the floor plans from DnD MapBuilder Interior v2.1.1, both built in unchanged. A seed makes the same map in v1.1 as in those scripts.
+
+Once the area map has its locations, the question "Would you like to generate floor plans for the locations on your adventure?" appears:
+
+- "Yes" lets you pick a floor plan for each location by hand. Click a floor plan button, then "Use for this location" to move on. The last location suggests a "Dungeon complex" or a "Town" for the finale.
+- "Make automatically" gives every location a floor plan at once. Every location but the last is a Building 6 times in 10, a Village 2 in 10, or a Hideout 2 in 10. The last is a Town or a Dungeon complex, one chance in two each.
+- "No" saves the locations without floor plans.
+
+Everything is saved in one folder with `<name>_locations.txt`, a list that ties each location to its square and its floor plan's kind and seed.
+
+### DnD MapBuilder Exterior v2.0
+
+Makes one outdoor area per map: wandering lines that cut the land into regions, with one patch of forest, one of sand and rock, and one of water. "Adventure locations" scatters 7 to 29 numbered locations marked with a red x. The map and the locations each have their own seed, so you can keep a map you like and roll new locations on it.
+
+### DnD MapBuilder Interior v2.1.1
+
+Makes floor plans, five kinds in all:
+
+- Building: one floor, with an entrance and sometimes an exit.
+- Village: 6 to 11 buildings, saved in one go with a list of every building and its seed.
+- Hideout: 3 to 6 levels, up to 3 above ground and the rest below, with one stairwell through them all.
+- Town: 12 to 29 buildings and a hideout.
+- Dungeon complex: 15 to 99 rooms on an even grid, joined by corridors that never cross, with a room key.
+
+Each floor, dungeon room and building prints on one sheet of its own.
+
+## Walkthrough
+
+### Seeds
+
+Every map has a seed, a number that always makes the same map. Paste a seed into the seed box and click the same button to get that map again.
+
+In v1.1 the line of text shows a code once locations are added: the map seed, a dash, and the locations seed, like `123456789012345-987654321098765`. Paste a code and click "Area map" or "Adventure locations" to bring back that land and those locations. Every floor plan has a seed of its own, shown in the locations list.
+
+### Print and play
+
+Every map fits one 8.5 x 11 sheet. Turn on "Fit to page" (or "Scale to fit") in the print window, or the edges get cut off.
+
+Maps are saved with and without the grid. The `_grid` JPGs have the blue 70 pixel grid for playing on the table. The plain or `_walls` JPGs are for printing without it, or for an online virtual tabletop, where the grid should be set to 70 pixels per square.
+
+### Saved files
+
+Each save makes its own folder inside `Maps`, next to the script. A saved map is never overwritten: pick another name if the folder already exists.
+
+| File | What it is |
+|---|---|
+| `<name>.jpg`, `<name>_grid.jpg` | The area map, without and with the blue grid |
+| `<name>_locations.txt` | The code, the number of locations, and every location with its square and floor plan |
+| `<name>_location_<nn>_...` | One location's floor plan: its building, hideout, village, town or dungeon rooms |
+| `<name>_..._overview.jpg` | The overview of a village, town, hideout or dungeon complex |
+| `<name>_..._buildings.txt`, `<name>_..._room_key.txt` | The list of buildings, or the room key, for a village, town or dungeon complex |
+
+A town or dungeon complex saves every building, level or room, so a folder can hold hundreds of files. That is normal.
+
+## Troubleshooting
+
+| Issue | Solution |
+|---|---|
+| `ModuleNotFoundError: No module named 'PIL'` | Run `python3 -m pip install pillow` |
+| `ModuleNotFoundError: No module named 'tkinter'` | Install Python from python.org, which includes Tkinter |
+| The window does not appear | Run the script from the Terminal app, not from inside another program |
+| "No map could be made from this seed." | Rare. Click "Area map" again for a new map |
+| The printed map is cut off at the edges | Turn on "Fit to page" or "Scale to fit" in the print window |
+| Cannot find the saved maps | Look in the `Maps` folder next to the script. The line of text in the window shows the full path after saving |
+| "There is already a folder called ..." | Pick another name. A saved map is never overwritten |
+| "Use a name without / \ : * ? ..." | Take those characters out of the name, and do not start it with a dot |
+
+## Security Notes
+
+- Offline: the scripts never use the network.
+- Writes only to `Maps`: the only files they save are JPG pictures and text files, in the `Maps` folder next to the script.
+- No personal data: the pictures and text files hold only the maps, their seeds and codes, and the locations.
+- Standalone: each script is a single file with no installer. Deleting the script and its folder in `Maps` removes everything it saved.
+
+## Older versions
+
+Older versions stay in the repo with their READMEs, so you can run any of them. Each version's README says what changed. Old scripts that are no longer in use go to an archive folder rather than being deleted.
+
+## About this repo
+
+I can read a Python script but I only speak English and PowerShell. AI generates, edits and reviews the code. Each script is published with a README next to it.
+
+The tools are for personal use at the table and have not been tested with any online platforms.
+
+## License
+
+Unlicense. See the `LICENSE` file.
+
