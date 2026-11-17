@@ -15,7 +15,7 @@ The newest tool, DnD MapBuilder v1.1, joins the two in one window. Pick a floor 
 
 | Script | What it makes | Status |
 |---|---|---|
-| `DnD-MapBuilder_v1.1.py` | Area map, adventure locations and a floor plan for each location, in one window | Newest |
+| `DnD-MapBuilder_v1.4.py` | Area map, adventure locations and a floor plan for each location, in one window | Newest |
 | `GitHib/DnD-MapBuilder-Interior_v2.1.1.py` | Floor plans: Building, Village, Hideout, Town, Dungeon complex | Current floor plan tool |
 | `DnD-MapBuilder-Exterior_v2.0.py` | Area maps with adventure locations | Current area map tool |
 | `GitHib/DnD-MapBuilder-Interior_v2.1.py` | Floor plans, before the 2.1.1 changes | Earlier |
