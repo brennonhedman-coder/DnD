@@ -2,7 +2,7 @@
 
 Dungeons & Dragons stuff to make life easier.
 
-Click a few buttons, get a whole adventure: a map of the land, places to visit, and a floor plan for every place. Print it on normal paper and play.
+Click a few buttons, get a whole adventure: a map of the land, places to visit, and a floor plan for every place. Print it on normal paper and play. But in like super basic lines and it's rough.
 
 ## What's here
 
